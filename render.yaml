@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: aura-telegram-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: AURA_WORKSPACE
+        value: ./aura_workspace
